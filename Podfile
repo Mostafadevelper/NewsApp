@@ -12,5 +12,7 @@ target 'NewsApp' do
   pod 'SwiftyBeaver', '~> 1.8.4'
   pod 'SDWebImage'
   pod 'lottie-ios'
+  pod 'IQKeyboardManager'
+
 
 end

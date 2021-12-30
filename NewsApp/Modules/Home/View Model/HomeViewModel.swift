@@ -19,7 +19,7 @@ class HomeViewModel: ViewModel {
     var newsList :(([HomeCellViewModel])->())!
     var selectedResult: Article?
     var total_page : Int = 1
-    var page : Int = 1
+    var page: Int = 1
     var isSearching = false
     var searchTerm = "apple"
 
@@ -30,6 +30,7 @@ extension HomeViewModel {
     func resetValues() {
         page = 1
         articles = []
+        cellViewModels = []
         total_page = 1
         searchTerm = "apple"
     }
@@ -40,7 +41,7 @@ extension HomeViewModel {
         guard self.page <= self.total_page else { return }
         if self.page == 1 { self.state = .loading}
         homeApi.getNewsList(page: page, search: searchTerm).get { [weak self] response in
-            if let articles = response.articles  {
+            if let articles = response.articles, !articles.isEmpty  {
                 self?.page += 1
                 self?.total_page = ((response.totalResults ?? 0) / 20 )
                 self?.state = .normal
