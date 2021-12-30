@@ -14,7 +14,7 @@ extension UIImageView {
         
         if urlName != nil {
             self.alpha = 0.0
-            self.sd_setImage(with: URL(string: urlName!), placeholderImage: UIImage(named: "defaultIMG"), options: .highPriority, progress: { (value, toValue, nil) in
+            self.sd_setImage(with: URL(string: urlName!), placeholderImage: UIImage(named: "news"), options: .highPriority, progress: { (value, toValue, nil) in
             }) { (_, _, _, _) in
                 UIView.animate(withDuration: 0.3) { [weak self] in
                     self?.alpha = 1.0
@@ -22,7 +22,7 @@ extension UIImageView {
                 }
             }
         }else {
-            self.image = UIImage(named: "defaultIMG")
+            self.image = UIImage(named: "news")
         }
     }
 }

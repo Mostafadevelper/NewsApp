@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.loadApp()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(url[url.count - 1])
+        
+        
         return true
     }
 

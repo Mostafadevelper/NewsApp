@@ -11,9 +11,11 @@ class DetailsVC: UIViewController {
 
     //MARK:- Layout
     @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var newsAuthorLB: UILabel!
     @IBOutlet weak var newsDescriptionLB: UILabel!
     @IBOutlet weak var newsTitleLB: UILabel!
     @IBOutlet weak var newsPublishedAtLB: UILabel!
+    @IBOutlet weak var titleLB: UILabel!
     
     //MARK:- Variable:-
     weak var coordinator: MainCoordinator?
@@ -39,6 +41,15 @@ class DetailsVC: UIViewController {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
+    @IBAction func addFavorite(_ sender: Any) {
+        self.viewModel.saveArticle(title: viewModel.article.title, image: viewModel.article.image)
+    }
+    
+    
+    @IBAction func loadFovorite(_ sender: Any) {
+        coordinator?.loadFavorite()
+    }
+    
 }
 
 //MARK:- Details Data
@@ -46,6 +57,7 @@ extension DetailsVC {
    
     func loadDetailsData() {
     let detailsData = viewModel.article
+        newsAuthorLB.text = detailsData?.author
         self.newsImage.loadImage(urlName: detailsData?.urlToImage)
         self.newsTitleLB.text = detailsData?.title
         self.newsDescriptionLB.text = detailsData?.description

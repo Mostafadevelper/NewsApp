@@ -7,6 +7,7 @@
 
 
 import UIKit
+import Lottie
 
 class HomeVC: BaseVC {
 
@@ -15,6 +16,8 @@ class HomeVC: BaseVC {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var titleLB: UILabel!
+    @IBOutlet weak var emptyDataLB: UILabel!
     
     //MARK:- Variable:-
     weak var coordinator: MainCoordinator?
@@ -29,6 +32,7 @@ class HomeVC: BaseVC {
         bind()
         viewModel.fetchData()
         searchBar.delegate = self
+
     }
     
     @IBAction func serachAction(_ sender: Any) {
@@ -66,7 +70,6 @@ extension HomeVC {
             case .empty:
                 self.hideLoadingAnimation()
                 self.emptyView.isHidden = false
-//                self.showEmptyAnimation()
             case .error(let error):
                 self.hideLoadingAnimation()
                 self.showAlert("Error", error?.localizedDescription ?? "")
@@ -110,17 +113,6 @@ extension HomeVC : UITableViewDelegate {
         self.viewModel.didSelect(at: indexPath)
         self.tableView.deselectRow(at: indexPath, animated: true)
         coordinator?.openDetails(article: viewModel.selectedResult)
-//        dismiss(animated: true, completion: nil)
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
-//
-//        vc.isSearching = viewModel.isSearching ? true : false
-//                vc.delegate = self
-//
-//        if let id  = self.viewModel.selectedResult?.id {
-//            vc.id_popular = id
-//        }
-//        show(vc, sender: nil)
     }
     
     
@@ -143,7 +135,6 @@ extension HomeVC : UISearchControllerDelegate,UISearchBarDelegate {
             self.viewModel.fetchData()
         })
     }
-    
     
 }
 

@@ -11,4 +11,5 @@ struct StoryboardName {
     
     private init(){}
     static let home = "Home"
+    static let favorite = "Favorite"
 }

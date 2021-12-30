@@ -83,7 +83,8 @@ extension HomeViewModel {
             image: result.urlToImage ?? "",
             description: result.content ?? "",
             urlToImage: result.urlToImage ?? "",
-            publishedAt: createDate)
+            publishedAt: createDate,
+            author: result.author)
     }
 
 //

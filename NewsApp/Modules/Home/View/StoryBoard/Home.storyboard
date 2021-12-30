@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,22 +29,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGd-EX-NT5">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="LOi-Zn-dfM"/>
-                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfb-Mz-rKo">
-                                        <rect key="frame" x="180.5" y="60" width="53.5" height="24"/>
+                                        <rect key="frame" x="180.5" y="65" width="53.5" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t26-S1-jjT">
-                                        <rect key="frame" x="321" y="60" width="69" height="31"/>
+                                        <rect key="frame" x="360" y="65" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="9qg-fS-AcD"/>
+                                            <constraint firstAttribute="height" constant="30" id="dlk-OZ-uar"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Search"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="search" title=" "/>
                                         <connections>
                                             <action selector="serachAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qJc-0p-KzR"/>
                                         </connections>
@@ -79,7 +81,7 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="Header"/>
                                         <constraints>
                                             <constraint firstItem="xMf-vb-hVZ" firstAttribute="leading" secondItem="Isv-ja-PkI" secondAttribute="leading" constant="12" id="4dd-Y8-KCX"/>
                                             <constraint firstItem="agP-0e-V1L" firstAttribute="top" secondItem="Isv-ja-PkI" secondAttribute="top" id="6O8-HZ-Lba"/>
@@ -91,9 +93,10 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Header"/>
                                 <constraints>
                                     <constraint firstItem="Isv-ja-PkI" firstAttribute="leading" secondItem="VbT-bU-mmC" secondAttribute="leading" id="5dn-Sk-2Fs"/>
+                                    <constraint firstItem="EGd-EX-NT5" firstAttribute="height" secondItem="VbT-bU-mmC" secondAttribute="height" multiplier="0.590909" id="73Q-kY-xFM"/>
                                     <constraint firstItem="Isv-ja-PkI" firstAttribute="height" secondItem="VbT-bU-mmC" secondAttribute="height" id="H0v-ZH-wWA"/>
                                     <constraint firstAttribute="trailing" secondItem="t26-S1-jjT" secondAttribute="trailing" constant="24" id="Qyp-27-Z2o"/>
                                     <constraint firstItem="EGd-EX-NT5" firstAttribute="top" secondItem="VbT-bU-mmC" secondAttribute="top" id="UkI-2y-7rj"/>
@@ -142,10 +145,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyDataLB" destination="WKc-bH-OpG" id="s2b-18-czx"/>
                         <outlet property="emptyView" destination="tGL-Ms-IL2" id="74I-hw-CWw"/>
                         <outlet property="searchBar" destination="90v-vR-hHR" id="7UZ-FI-y2V"/>
                         <outlet property="searchView" destination="Isv-ja-PkI" id="wtg-XA-RuY"/>
                         <outlet property="tableView" destination="9hT-gw-Tab" id="lEx-zU-hBP"/>
+                        <outlet property="titleLB" destination="wfb-Mz-rKo" id="SqN-E4-Bjv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,35 +169,50 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-sY-d9R">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="cj7-pZ-D1e"/>
-                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-Lm-mEr">
-                                        <rect key="frame" x="157.5" y="60" width="99" height="20.5"/>
+                                        <rect key="frame" x="157.5" y="65" width="99" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RD4-Tx-WHy">
-                                        <rect key="frame" x="16" y="60" width="55.5" height="31"/>
+                                        <rect key="frame" x="16" y="65" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="ClT-CW-4l8"/>
+                                            <constraint firstAttribute="height" constant="30" id="pyg-R3-SP6"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="back"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="back" title=" "/>
                                         <connections>
                                             <action selector="backAction:" destination="VO1-Dq-WUO" eventType="touchUpInside" id="q3W-tl-eGu"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR7-7Q-dNg">
+                                        <rect key="frame" x="307" y="65" width="95" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fYM-kc-25F"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" subtitle=" add favorite"/>
+                                        <connections>
+                                            <action selector="addFavorite:" destination="VO1-Dq-WUO" eventType="touchUpInside" id="yGv-CE-gCX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Header"/>
                                 <constraints>
                                     <constraint firstItem="ieh-sY-d9R" firstAttribute="top" secondItem="8CZ-VG-Xug" secondAttribute="top" id="Ics-pQ-qaZ"/>
+                                    <constraint firstItem="GR7-7Q-dNg" firstAttribute="top" secondItem="ieh-sY-d9R" secondAttribute="bottom" id="Rbn-Di-C4n"/>
                                     <constraint firstItem="ieh-sY-d9R" firstAttribute="leading" secondItem="8CZ-VG-Xug" secondAttribute="leading" id="T8U-MF-rR5"/>
                                     <constraint firstItem="RD4-Tx-WHy" firstAttribute="top" secondItem="ieh-sY-d9R" secondAttribute="bottom" id="bNA-Eh-42c"/>
                                     <constraint firstItem="RD4-Tx-WHy" firstAttribute="leading" secondItem="8CZ-VG-Xug" secondAttribute="leading" constant="16" id="ckX-sM-XrH"/>
+                                    <constraint firstItem="ieh-sY-d9R" firstAttribute="height" secondItem="8CZ-VG-Xug" secondAttribute="height" multiplier="0.590909" id="hNs-o2-4iH"/>
                                     <constraint firstItem="2ga-Lm-mEr" firstAttribute="centerX" secondItem="8CZ-VG-Xug" secondAttribute="centerX" id="iBV-Wm-CB7"/>
                                     <constraint firstAttribute="trailing" secondItem="ieh-sY-d9R" secondAttribute="trailing" id="jbJ-aa-ijk"/>
+                                    <constraint firstAttribute="trailing" secondItem="GR7-7Q-dNg" secondAttribute="trailing" constant="12" id="uBy-nt-zgF"/>
                                     <constraint firstItem="2ga-Lm-mEr" firstAttribute="top" secondItem="ieh-sY-d9R" secondAttribute="bottom" id="xGk-9U-Vfy"/>
                                 </constraints>
                             </view>
@@ -200,48 +220,59 @@
                                 <rect key="frame" x="0.0" y="110" width="414" height="786"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTC-gU-qnd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1024"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-sY-CnD">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-sY-CnD">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="TVx-sY-CnD" secondAttribute="height" multiplier="15:8" id="S4u-Ye-VH5"/>
+                                                    <constraint firstAttribute="width" secondItem="TVx-sY-CnD" secondAttribute="height" multiplier="15:10" id="S4u-Ye-VH5"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Acx-5Q-gLH">
-                                                <rect key="frame" x="12" y="237" width="390" height="767"/>
+                                                <rect key="frame" x="12" y="292" width="390" height="249"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-BE-sne">
-                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="175"/>
-                                                        <string key="text">The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and store The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and store</string>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The S&amp;P 500 was on track to ope" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aez-t5-qaX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="23.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <color key="textColor" name="secondary"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-E3-ehq">
-                                                        <rect key="frame" x="0.0" y="187" width="390" height="175"/>
-                                                        <string key="text">The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and store The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and store</string>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The S&amp;P 500 was on track to ope" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-BE-sne">
+                                                        <rect key="frame" x="0.0" y="35.5" width="390" height="22"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" name="secondary"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LV-vf-RLK">
-                                                        <rect key="frame" x="0.0" y="374" width="390" height="350"/>
-                                                        <mutableString key="text">The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and store The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and storeThe S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and store The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a record-setting rally amid thin trading volumes, with investors unshaken by Omicron-driven travel disruptions and store</mutableString>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The S&amp;P 500 w" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSa-E3-ehq">
+                                                        <rect key="frame" x="0.0" y="69.5" width="390" height="22"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" name="secondary"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The S&amp;P 500 was on track to open at all-time highs on Tuesday, building on a " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LV-vf-RLK">
+                                                        <rect key="frame" x="0.0" y="103.5" width="390" height="44"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                        <color key="textColor" name="secondary"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load WebSite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWA-J0-bR4">
-                                                        <rect key="frame" x="0.0" y="736" width="390" height="31"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
-                                                        <nil key="textColor"/>
+                                                        <rect key="frame" x="0.0" y="159.5" width="390" height="31"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                        <color key="textColor" name="AccentColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-4d-CkC">
+                                                        <rect key="frame" x="0.0" y="202.5" width="390" height="46.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=" " subtitle="favorite"/>
+                                                        <connections>
+                                                            <action selector="loadFovorite:" destination="VO1-Dq-WUO" eventType="touchUpInside" id="hmr-AX-nij"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Euo-vT-gsF">
-                                                <rect key="frame" x="12" y="973" width="390" height="31"/>
+                                                <rect key="frame" x="12" y="451.5" width="390" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
                                                 <connections>
@@ -289,18 +320,34 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="newsAuthorLB" destination="Aez-t5-qaX" id="tdx-0m-xCm"/>
                         <outlet property="newsDescriptionLB" destination="VSa-E3-ehq" id="aT2-mp-BXe"/>
                         <outlet property="newsImage" destination="TVx-sY-CnD" id="lJk-tY-nvX"/>
                         <outlet property="newsPublishedAtLB" destination="5LV-vf-RLK" id="pve-RF-Gyv"/>
                         <outlet property="newsTitleLB" destination="0d7-BE-sne" id="Z92-8a-Rsn"/>
+                        <outlet property="titleLB" destination="2ga-Lm-mEr" id="ziY-ou-JdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APh-MW-m5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="84"/>
+            <point key="canvasLocation" x="715.94202898550725" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="30" height="30"/>
+        <image name="search" width="20" height="20"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Header">
+            <color red="1" green="0.83300000429153442" blue="0.23299999535083771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondary">
+            <color red="0.0" green="0.10999999940395355" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

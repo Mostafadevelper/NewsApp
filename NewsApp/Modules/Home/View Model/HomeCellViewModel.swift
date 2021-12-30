@@ -15,5 +15,5 @@ struct HomeCellViewModel {
     let description: String
     let urlToImage: String
     let publishedAt: String
-    
+    let author: String?
 }

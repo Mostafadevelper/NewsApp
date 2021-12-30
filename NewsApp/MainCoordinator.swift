@@ -33,4 +33,16 @@ class MainCoordinator: Coordinator {
     func popUpDetailsVC(){
         self.naviagtionController.popViewController(animated: true)
     }
+    
+    func loadFavorite(){
+        let favoriteVC = FavoriteVC.instatiate(StoryboardName.favorite)
+        favoriteVC.coordinator = self
+        self.naviagtionController.present(favoriteVC, animated: true)
+
+    }
+    
+    func dismissFavorite(){
+        self.naviagtionController.dismiss(animated: true)
+
+    }
 }
