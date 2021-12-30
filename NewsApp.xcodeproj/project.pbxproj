@@ -48,6 +48,8 @@
 		B29CB323277DEFEF00DEA64B /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CB322277DEFEF00DEA64B /* ArticleData.swift */; };
 		B29CB327277DF38D00DEA64B /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29CB326277DF38D00DEA64B /* Favorite.storyboard */; };
 		B29CB32A277DF3B300DEA64B /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CB329277DF3B300DEA64B /* FavoriteVC.swift */; };
+		B29CB32C277DFF8400DEA64B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B29CB32B277DFF8300DEA64B /* README.md */; };
+		B29CB332277E077B00DEA64B /* NewsGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = B29CB331277E077B00DEA64B /* NewsGif.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		B29CB322277DEFEF00DEA64B /* ArticleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
 		B29CB326277DF38D00DEA64B /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		B29CB329277DF3B300DEA64B /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		B29CB32B277DFF8300DEA64B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B29CB331277E077B00DEA64B /* NewsGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = NewsGif.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		B29CB26F277DB09700DEA64B = {
 			isa = PBXGroup;
 			children = (
+				B29CB32B277DFF8300DEA64B /* README.md */,
 				B29CB27A277DB09700DEA64B /* NewsApp */,
 				B29CB279277DB09700DEA64B /* Products */,
 				B57D9043EFAF61AC762ACDDC /* Pods */,
@@ -222,6 +227,7 @@
 		B29CB296277DB1DA00DEA64B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B29CB331277E077B00DEA64B /* NewsGif.gif */,
 				B29CB297277DB1F600DEA64B /* Lottie Files */,
 				B29CB286277DB09A00DEA64B /* LaunchScreen.storyboard */,
 				B29CB289277DB09A00DEA64B /* Info.plist */,
@@ -459,7 +465,9 @@
 				B29CB29A277DB20B00DEA64B /* load.json in Resources */,
 				B29CB2DF277DCB9A00DEA64B /* Home.storyboard in Resources */,
 				B29CB285277DB09A00DEA64B /* Assets.xcassets in Resources */,
+				B29CB32C277DFF8400DEA64B /* README.md in Resources */,
 				B29CB2D3277DB68700DEA64B /* HomeTableCell.xib in Resources */,
+				B29CB332277E077B00DEA64B /* NewsGif.gif in Resources */,
 				B29CB2F1277DE1AB00DEA64B /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
