@@ -17,7 +17,7 @@ class HomeViewModel: ViewModel {
     var loading :((Bool) ->())!
     var error : ((String)-> ())!
     var newsList :(([HomeCellViewModel])->())!
-    var selectedResult: Article?
+    var selectedResult: HomeCellViewModel?
     var total_page : Int = 1
     var page: Int = 1
     var isSearching = false
@@ -76,13 +76,19 @@ extension HomeViewModel {
     }
     
     func createCellViewModel(at result : Article) -> HomeCellViewModel {
-
-        HomeCellViewModel(title: result.title ?? "", image: result.urlToImage ?? "")
+        
+        let createDate = Date().customDate(result.publishedAt ?? "")
+        return   HomeCellViewModel(
+            title: result.title ?? "",
+            image: result.urlToImage ?? "",
+            description: result.content ?? "",
+            urlToImage: result.urlToImage ?? "",
+            publishedAt: createDate)
     }
 
 //
     func didSelect( at indexPath: IndexPath ){
-        let new = self.articles[indexPath.row]
+        let new = self.cellViewModels[indexPath.row]
         self.selectedResult = new
     }
 }

@@ -38,6 +38,8 @@
 		B29CB2D5277DB6BF00DEA64B /* HomeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CB2D4277DB6BF00DEA64B /* HomeApi.swift */; };
 		B29CB2D9277DB72A00DEA64B /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CB2D8277DB72A00DEA64B /* NewsResponse.swift */; };
 		B29CB2DF277DCB9A00DEA64B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B29CB2DE277DCB9A00DEA64B /* Home.storyboard */; };
+		B29CB2E1277DD43D00DEA64B /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CB2E0277DD43D00DEA64B /* DetailsVC.swift */; };
+		B29CB2E3277DD4A100DEA64B /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29CB2E2277DD4A100DEA64B /* DetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		B29CB2D4277DB6BF00DEA64B /* HomeApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApi.swift; sourceTree = "<group>"; };
 		B29CB2D8277DB72A00DEA64B /* NewsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
 		B29CB2DE277DCB9A00DEA64B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B29CB2E0277DD43D00DEA64B /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		B29CB2E2277DD4A100DEA64B /* DetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 			children = (
 				B29CB2CB277DB63000DEA64B /* HomeViewModel.swift */,
 				B29CB2CD277DB65D00DEA64B /* HomeCellViewModel.swift */,
+				B29CB2E2277DD4A100DEA64B /* DetailsViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				B29CB2B8277DB3AC00DEA64B /* HomeVC.swift */,
+				B29CB2E0277DD43D00DEA64B /* DetailsVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -434,8 +440,10 @@
 				B29CB2CA277DB48900DEA64B /* ViewModel.swift in Sources */,
 				B29CB2A9277DB25F00DEA64B /* RequestParamters.swift in Sources */,
 				B29CB2C2277DB42700DEA64B /* UIView+EX.swift in Sources */,
+				B29CB2E3277DD4A100DEA64B /* DetailsViewModel.swift in Sources */,
 				B29CB2D9277DB72A00DEA64B /* NewsResponse.swift in Sources */,
 				B29CB2C9277DB48900DEA64B /* BaseVC.swift in Sources */,
+				B29CB2E1277DD43D00DEA64B /* DetailsVC.swift in Sources */,
 				B29CB2B9277DB3AC00DEA64B /* HomeVC.swift in Sources */,
 				B29CB2B0277DB2CF00DEA64B /* Coordinator.swift in Sources */,
 				B29CB2C1277DB42700DEA64B /* TableView+EX.swift in Sources */,

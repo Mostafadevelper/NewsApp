@@ -23,4 +23,14 @@ class MainCoordinator: Coordinator {
         self.naviagtionController.navigationBar.isHidden = true
     }
     
+    func openDetails(article: HomeCellViewModel?){
+        let detailsVC = DetailsVC.instatiate(StoryboardName.home)
+        detailsVC.viewModel.article = article
+        detailsVC.coordinator = self
+        self.naviagtionController.pushViewController(detailsVC, animated: true)
+    }
+    
+    func popUpDetailsVC(){
+        self.naviagtionController.popViewController(animated: true)
+    }
 }

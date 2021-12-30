@@ -109,7 +109,7 @@ extension HomeVC : UITableViewDelegate {
         
         self.viewModel.didSelect(at: indexPath)
         self.tableView.deselectRow(at: indexPath, animated: true)
-       // coordinator?.openDetails(article: viewModel.selectedResult)
+        coordinator?.openDetails(article: viewModel.selectedResult)
 //        dismiss(animated: true, completion: nil)
 //        let sb = UIStoryboard(name: "Main", bundle: nil)
 //        let vc = sb.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
